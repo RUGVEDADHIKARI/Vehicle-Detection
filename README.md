@@ -8,7 +8,6 @@ This repository contains a vehicle detection and counting system built using YOL
 - [Installation](#installation)
 - [Usage](#usage)
 - [File Structure](#file-structure)
-- [Acknowledgements](#acknowledgements)
 
 ## Overview
 
@@ -51,3 +50,7 @@ To run this project locally, follow these steps:
 * **tracker.py**: Contains the Tracker class responsible for tracking detected vehicles.
 * **VDfrontend.py**: Streamlit app that provides the user interface for the system.
 * **Vehicle_Detection.py**: Core script that integrates YOLO and tracking for vehicle detection.
+
+## Acknowledgements
+* [YOLO v8](https://github.com/ultralytics/ultralytics) by Ultralytics for providing a state-of-the-art object detection model.
+* [Streamlit](https://streamlit.io/) for offering a simple and intuitive framework to create web apps.
