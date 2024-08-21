@@ -1,50 +1,53 @@
-# Vehicle Detection System
+# Vehicle Detection and Counting System
 
-This project is a Vehicle Detection System that uses YOLO v8 and OpenCV to detect and count vehicles such as cars, motorcycles, and trucks from a video feed. The system overlays the detected vehicle count on the video frame in real-time.
+This repository contains a vehicle detection and counting system built using YOLO v8, OpenCV, and Streamlit. The system allows users to upload videos, detect vehicles, and track their count in real-time.
 
-## Getting Started
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [File Structure](#file-structure)
+- [Acknowledgements](#acknowledgements)
 
-### Features
+## Overview
 
-* Real-time Vehicle Detection: Detects and classifies different types of vehicles (cars, motorcycles, trucks) in real-time.
-* Vehicle Counting: Keeps track of the number of vehicles detected, displaying counts directly on the video frame.
-* Customizable: Parameters for vehicle detection and counting can be customized to fit different use cases.
-  
-### Installation
+This project aims to provide an easy-to-use interface for detecting and counting vehicles in videos. The system is powered by the YOLO v8 model for object detection, and it uses a custom tracking algorithm to keep track of the detected vehicles.
 
-* Clone the repository:
-  ```
-  git clone https://github.com/yourusername/vehicle-detection-system.git
-  cd vehicle-detection-system
-  ```
-* Install required dependencies:
-  Make sure you have Python 3.x installed. Install the necessary Python packages using pip:
-  ```
-  pip install -r requirements.txt
-  ```
-  Typical dependencies include:
-  * OpenCV
-  * YOLOv8 (Ultralytics)
-  * NumPy
-* Download YOLOv8 weights:
-  You'll need to download the pretrained YOLOv8 weights and place them in the appropriate directory. Instructions can be    
-  found [here](https://github.com/ultralytics/yolov5/releases)
+## Features
 
-### Usage
+- **Real-time Vehicle Detection**: Uses YOLO v8 to detect vehicles in uploaded videos.
+- **Vehicle Tracking**: Tracks detected vehicles across frames to count them accurately.
+- **User-Friendly Interface**: Built with Streamlit, the app provides a simple interface for video uploads and result visualization.
 
-* Run the vehicle detection script:
-   ```
-   python vehicle_detection.py --video <path_to_video_file>
-   ```
-   Replace <path_to_video_file> with the path to the video file you want to analyze. You can also use a webcam by omitting      the --video option.
-* View Results:
-   The script will display the video with vehicle counts overlaid in real-time. Press ESC to exit the video stream.
+## Installation
 
-### Project Structure
-* vehicle_detection.py: Main script for running the vehicle detection and counting system.
-* requirements.txt: Lists all Python dependencies required for the project.
-* models/: Directory to place the YOLOv8 model weights.
-* data/: Sample video files for testing.
+To run this project locally, follow these steps:
 
-### Customization
-You can customize the detection and counting parameters within the vehicle_detection.py script to suit your specific use case, such as adjusting detection confidence thresholds or changing the categories of vehicles to detect.
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/RUGVEDADHIKARI/Vehicle-Detection.git
+   cd vehicle-detection
+2. **Install Dependencies**:
+   Ensure you have Python 3.8+ installed. Then, install the required packages:
+   ```bash
+   pip install -r requirements.txt
+3. **Download YOLO Weights**:
+   Download the YOLO v8 model weights and place them in the appropriate directory (e.g., Yolo-Weights/).
+4. **Run the Application**:
+   Start the Streamlit application by running:
+   ```bash
+   streamlit run VDfrontend.py
+
+## Usage
+
+1. **Upload Video**: Use the interface to upload a video file (.mp4, .avi, .mov).
+2. **Upload Mask**: Upload mask for the video. You can generate it on the canva.
+3. **Process Video**:The system will process the video, detect, and count vehicles in real-time.
+4. **View Results**:The results, including the detected vehicles and their count, will be displayed.
+
+## File Structure
+
+* **tracker.py**: Contains the Tracker class responsible for tracking detected vehicles.
+* **VDfrontend.py**: Streamlit app that provides the user interface for the system.
+* **Vehicle_Detection.py**: Core script that integrates YOLO and tracking for vehicle detection.
